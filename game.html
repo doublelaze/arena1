@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .game{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20% auto;
+            gap: 1rem;
+        }
+        #guessbox{
+            height: 2rem;
+            width: 100%;
+            border: 1px solid grey;
+            max-width: 25rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-size: 25px;
+        }
+        .rdcount{            
+            height: 3rem;
+            width: 6rem;
+            color: blue;
+            font-size: 40px;
+            text-align: center
+        }
+        button{
+            height: 3rem;
+            width: 100%;
+            border: 1px solid grey;
+            background: green;
+            max-width: 6rem;
+            border-radius: 0.8rem;
+            font-size: 25px;
+        }
+        .overlay{
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0,0,0,0.538);
+            width: 100%;
+            height: 100vh;
+            z-index: 3;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .layout{
+            background: white;
+            border-radius: 1rem;
+            width: 100%;
+            max-width: 32rem;
+            padding: 1rem;
+            text-align: center;
+        }
+        .layout>h1:nth-child(2){
+            color: red;
+        }
+        .error{
+            display: flex;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="game">
+        <h1 class="rdcount">0</h1>
+        <input type="number" autofocus="true" id="guessbox">
+        <div class="error">Input a number from 1 to 50</div>
+        <div class="live">Live: 0/5</div>
+        <button class="btn">start</button>
+    </div>
+<div class="overlay">
+<div class="layout">
+<h1>Oops!...</h1>
+<h2>Game Over!</h2>
+<p>Refresh your browser to start again!...</p>
+
+</div>
+</div>
+<script src="./game.js"></script>
+</body>
+</html>
